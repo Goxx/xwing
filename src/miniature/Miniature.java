@@ -12,14 +12,16 @@ public class Miniature {
 	private int y;
 	private int width;
 	private int height;
+	private int orientation;
 	
-	public Miniature(Pilot pilot, Image image, int x, int y, int width, int height) {
+	public Miniature(Pilot pilot, Image image, int x, int y, int width, int height,int orientation) {
 		this.pilot = pilot;
 		this.image = image;
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
+		this.orientation = orientation;
 	}
 
 	public Pilot getPilot() {
@@ -70,6 +72,14 @@ public class Miniature {
 		this.height = height;
 	}
 	
+	public int getOrientation() {
+		return orientation;
+	}
+
+	public void setOrientation(int orientation) {
+		this.orientation = orientation;
+	}
+
 	public void move(int x, int y) {
 		
 	}
