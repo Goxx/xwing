@@ -70,4 +70,8 @@ public class Miniature {
 		this.height = height;
 	}
 	
+	public void move(int x, int y) {
+		
+	}
+	
 }
