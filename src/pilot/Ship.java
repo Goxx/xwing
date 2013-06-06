@@ -1,5 +1,10 @@
 package pilot;
 
-public enum Ship {
-	X_WING, TIE_FIGHTER;
+public class Ship {
+	
+	String type;//X_WING, TIE_FIGHTER;
+	Mouvement mouvementPossible;
+	
+	
+	
 }
