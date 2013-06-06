@@ -12,7 +12,7 @@ public class Ardoise extends JPanel {
 		private boolean possedeDisque = true;
 
 		 public Ardoise() {
-			setBackground(Color.YELLOW);
+			setBackground(Color.white);
 			setPreferredSize(new Dimension(200, 150));
 		 } 
 	
@@ -24,6 +24,7 @@ public class Ardoise extends JPanel {
 			g.setColor(Color.RED);	
 			g.fillOval(60, 35, 80, 80);
 		 }
+		 
 		 public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			if (possedeDisque) dessiner(g);

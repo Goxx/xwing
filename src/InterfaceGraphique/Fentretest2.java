@@ -1,12 +1,9 @@
 package InterfaceGraphique;
 
-
+/*
 import javax.swing.JFrame;
 import java.awt.Frame;
 
-	
-	
-	
 	
 
 	public class Fentretest2 {
@@ -21,3 +18,4 @@ import java.awt.Frame;
 		 }
 	}
 
+*/
