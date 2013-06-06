@@ -8,13 +8,13 @@ public class Miniature {
 
 	private Pilot pilot;
 	private Image image;
-	private int x;
-	private int y;
-	private int width;
-	private int height;
-	private int orientation;
+	private float x;
+	private float y;
+	private float width;
+	private float height;
+	private float orientation;
 	
-	public Miniature(Pilot pilot, Image image, int x, int y, int width, int height,int orientation) {
+	public Miniature(Pilot pilot, Image image, float x, float y, float width, float height,float orientation) {
 		this.pilot = pilot;
 		this.image = image;
 		this.x = x;
@@ -22,6 +22,16 @@ public class Miniature {
 		this.width = width;
 		this.height = height;
 		this.orientation = orientation;
+	}
+	
+	public Miniature() {
+		this.pilot = null;
+		this.image = null;
+		this.x = 0;
+		this.y = 0;
+		this.width = 0;
+		this.height = 0;
+		this.orientation = 0;
 	}
 
 	public Pilot getPilot() {
@@ -40,48 +50,56 @@ public class Miniature {
 		this.image = image;
 	}
 
-	public int getX() {
+	public float getX() {
 		return x;
 	}
 
-	public void setX(int x) {
+	public void setX(float x) {
 		this.x = x;
 	}
 
-	public int getY() {
+	public float getY() {
 		return y;
 	}
 
-	public void setY(int y) {
+	public void setY(float y) {
 		this.y = y;
 	}
 
-	public int getWidth() {
+	public float getWidth() {
 		return width;
 	}
 
-	public void setWidth(int width) {
+	public void setWidth(float width) {
 		this.width = width;
 	}
 
-	public int getHeight() {
+	public float getHeight() {
 		return height;
 	}
 
-	public void setHeight(int height) {
+	public void setHeight(float height) {
 		this.height = height;
 	}
 	
-	public int getOrientation() {
+	public float getOrientation() {
 		return orientation;
 	}
 
-	public void setOrientation(int orientation) {
-		this.orientation = orientation;
+	/**
+	 * verifie si l orientation est positif
+	 * @param orientation
+	 */
+	public void setOrientation(float orientation) {
+		if (orientation < 0)
+			this.orientation = 360 + orientation;
+		else
+			this.orientation = orientation;
 	}
 
-	public void move(int x, int y) {
-		
+	public void move(double xBonus, double yBonus) {
+		this.x += xBonus;
+		this.y += yBonus;
 	}
 	
 }
