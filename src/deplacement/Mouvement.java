@@ -4,10 +4,11 @@ import miniature.Miniature;
 
 public class Mouvement {
 
-	String type;
+	String type; // le nom du mouvement
 	float deplacement;// indique la distance effectuer
-	float orientation;
-	float decalage;
+	float orientation;// decalage a l orientation du vaisseau a la fin (90 est un mouvement sans virage, 270 un demi tour)
+	float decalage; // represente l'orientation du déplacement effectuer ( de 0 a 360)
+	float porte; //indique si le mouvement est droit ou un arc de cercle ( 0 est un mouvement droit, positif est un mouvement trigo, negatif un mouvement horaire)
 	
 	public Mouvement(String type, float deplacement, float orientation,
 			float decalage) {
@@ -50,8 +51,9 @@ public class Mouvement {
 			xBonus = Math.sin(degre) * deplacement;
 			yBonus = - Math.cos(degre) * deplacement;
 		}
-		
-		newImage.setOrientation(orientationBase+this.orientation);
+		//met la nouvelle orientation
+		newImage.setOrientation(orientationBase+90-this.orientation);
+		//deplace la miniature
 		newImage.move(xBonus,yBonus);
 		
 	}
