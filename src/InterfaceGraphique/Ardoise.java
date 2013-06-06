@@ -21,7 +21,7 @@ public class Ardoise extends JPanel {
 		 }
 	
 		 public void dessiner(Graphics g) {
-			g.setColor(Color.RED);	
+			g.setColor(Color.RED);
 			g.fillOval(60, 35, 80, 80);
 		 }
 		 public void paintComponent(Graphics g) {

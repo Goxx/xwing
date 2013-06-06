@@ -32,7 +32,7 @@ public class Mouvement {
 		if ( degre < 0){
 			degre += 360;
 		}
-		else if ( degre > 360){
+		else if ( degre >= 360){
 			degre-= 360;
 		}
 		// on calcule le deplacement sur x et y que sa implique
