@@ -29,6 +29,12 @@ public class Mouvement {
 			degre = orientationBase + this.decalage - 90;
 		}
 		
+		if ( degre < 0){
+			degre += 360;
+		}
+		else if ( degre > 360){
+			degre-= 360;
+		}
 		// on calcule le deplacement sur x et y que sa implique
 		double xBonus = 0;
 		double yBonus = 0;
