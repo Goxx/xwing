@@ -10,9 +10,7 @@ public class Mouvement {
 	float decalage; // represente l'orientation du déplacement effectuer ( de 0 a 360)
 	float porte; //indique si le mouvement est droit ou un arc de cercle ( 0 est un mouvement droit, positif est un mouvement trigo, negatif un mouvement horaire)
 	
-	public Mouvement(String type, float deplacement, float orientation,
-			float decalage) {
-		super();
+	public Mouvement(String type, float deplacement, float orientation,	float decalage) {
 		this.type = type;
 		this.deplacement = deplacement;
 		this.orientation = orientation;
