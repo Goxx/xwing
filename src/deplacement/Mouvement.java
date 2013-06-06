@@ -24,13 +24,11 @@ public class Mouvement {
 		float orientationBase =imageBase.getOrientation();
 		float degre = 0; ;
 		// on calcule a quel endroit va atterrir la miniature
-		if (this.orientation < 90) {
-			if ( orientationBase - this.decalage < 0) {
-				degre = 360 + (orientationBase - this.decalage );
-			}
-			else {
-				degre = orientationBase - this.decalage ;
-			}
+		
+		if (this.decalage < 90 ) {
+			degre = orientationBase - 90 + this.decalage;
+		}else if (this.decalage >=90 ){
+			degre = orientationBase + this.decalage - 90;
 		}
 		
 		// on calcule le deplacement sur x et y que sa implique
