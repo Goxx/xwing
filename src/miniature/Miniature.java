@@ -95,8 +95,12 @@ public class Miniature {
 	public void setOrientation(int orientation) {
 		if (orientation < 0)
 			this.orientation = 360 + orientation;
-		else
+		else if ( orientation >= 360 ){
+			this.orientation = orientation - 360;
+		}
+		else {
 			this.orientation = orientation;
+		}
 	}
 
 	public void move(double xBonus, double yBonus) {
