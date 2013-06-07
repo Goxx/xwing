@@ -1,5 +1,7 @@
 package miniature;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Image;
 
 import pilot.Pilot;
@@ -8,13 +10,13 @@ public class Miniature {
 
 	private Pilot pilot;
 	private Image image;
-	private float x;
-	private float y;
-	private float width;
-	private float height;
-	private float orientation;
+	private int x;
+	private int y;
+	private int width; // rapport avec y ou x ? x je pense
+	private int height; // rapport avec x ou y ? y je pense
+	private int orientation;
 	
-	public Miniature(Pilot pilot, Image image, float x, float y, float width, float height,float orientation) {
+	public Miniature(Pilot pilot, Image image, int x, int y, int width, int height,int orientation) {
 		this.pilot = pilot;
 		this.image = image;
 		this.x = x;
@@ -50,39 +52,39 @@ public class Miniature {
 		this.image = image;
 	}
 
-	public float getX() {
+	public int getX() {
 		return x;
 	}
 
-	public void setX(float x) {
+	public void setX(int x) {
 		this.x = x;
 	}
 
-	public float getY() {
+	public int getY() {
 		return y;
 	}
 
-	public void setY(float y) {
+	public void setY(int y) {
 		this.y = y;
 	}
 
-	public float getWidth() {
+	public int getWidth() {
 		return width;
 	}
 
-	public void setWidth(float width) {
+	public void setWidth(int width) {
 		this.width = width;
 	}
 
-	public float getHeight() {
+	public int getHeight() {
 		return height;
 	}
 
-	public void setHeight(float height) {
+	public void setHeight(int height) {
 		this.height = height;
 	}
 	
-	public float getOrientation() {
+	public int getOrientation() {
 		return orientation;
 	}
 
@@ -90,7 +92,7 @@ public class Miniature {
 	 * verifie si l orientation est positif
 	 * @param orientation
 	 */
-	public void setOrientation(float orientation) {
+	public void setOrientation(int orientation) {
 		if (orientation < 0)
 			this.orientation = 360 + orientation;
 		else
@@ -100,6 +102,38 @@ public class Miniature {
 	public void move(double xBonus, double yBonus) {
 		this.x += xBonus;
 		this.y += yBonus;
+	}
+
+	public void dessiner(Graphics g) {
+		// TODO Auto-generated method stub
+		g.setColor(Color.BLUE);
+		int taille = 40;
+		g.drawOval((int)x-width/2, (int)y-height/2, width, height);
+		g.setColor(Color.RED);
+		//if ( orientation == 90)
+		int xArrivee = 0 ;
+		int yArrivee = 0;
+		
+		
+		if (orientation  >= 0 && orientation <=90){
+			yArrivee = (int)( y - (Math.cos(Math.toRadians(90 - orientation)) * taille));
+			xArrivee = (int) (x + (Math.sin(Math.toRadians(90 - orientation)) * taille));
+		}else if( orientation > 90 && orientation <= 180){
+			yArrivee = (int)( y - (Math.sin(Math.toRadians(180 - orientation)) * taille));
+			xArrivee = (int)( x - (Math.cos(Math.toRadians(180 - orientation)) * taille));
+		}
+		else if( orientation > 180 && orientation <= 270){
+			yArrivee = (int)( y + (Math.cos(Math.toRadians(270 - orientation)) * taille));
+			xArrivee = (int)( x - (Math.sin(Math.toRadians(270 - orientation)) * taille));
+		}
+		else if( orientation > 270){
+			yArrivee = (int)( y + (Math.sin(Math.toRadians(360 - orientation)) * taille));
+			xArrivee = (int)( x + (Math.cos(Math.toRadians(360 - orientation)) * taille));
+		}
+		g.drawLine((int) x , (int)  y , xArrivee, yArrivee);
+		//g.drawLine((int) x , (int)  y , x+30, (int)y);
+		//if ( orientation == 270)
+		//	g.drawLine((int) x , (int)  y,(int) (x),(int) (y +5));
 	}
 	
 }

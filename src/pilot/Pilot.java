@@ -29,6 +29,11 @@ public class Pilot {
 	}
 
 
+	public Pilot(Ship vaisseau1) {
+		this.ship = vaisseau1;
+	}
+
+
 	public Ship getShip() {
 		return ship;
 	}
