@@ -26,36 +26,36 @@ import java.awt.event.MouseListener;
 			((JFrame) cadre).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
 			Miniature miniature1 = new Miniature();
-			miniature1.setHeight(10);
-			miniature1.setWidth(10);
+			miniature1.setHeight(50);
+			miniature1.setWidth(50);
 			miniature1.setX(20);
 			miniature1.setY(30);
 			miniature1.setOrientation(90);
 			
 			Miniature miniature2 = new Miniature();
-			miniature2.setHeight(10);
-			miniature2.setWidth(33);
+			miniature2.setHeight(20);
+			miniature2.setWidth(20);
 			miniature2.setX(60);
 			miniature2.setY(120);
 			miniature2.setOrientation(270);
 			
 			Miniature miniature3 = new Miniature();
-			miniature3.setHeight(33);
-			miniature3.setWidth(33);
+			miniature3.setHeight(30);
+			miniature3.setWidth(30);
 			miniature3.setX(40);
 			miniature3.setY(50);
 			miniature3.setOrientation(0);
 			
 			Miniature miniature4 = new Miniature();
-			miniature4.setHeight(45);
-			miniature4.setWidth(10);
+			miniature4.setHeight(40);
+			miniature4.setWidth(40);
 			miniature4.setX(200);
 			miniature4.setY(250);
 			miniature4.setOrientation(190);
 			
 			Miniature miniatureCopi =new Miniature();
-			miniatureCopi.setHeight(45);
-			miniatureCopi.setWidth(10);
+			miniatureCopi.setHeight(40);
+			miniatureCopi.setWidth(40);
 			miniatureCopi.setX(200);
 			miniatureCopi.setY(250);
 			miniatureCopi.setOrientation(190);

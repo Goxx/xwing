@@ -112,7 +112,7 @@ public class Miniature {
 		// TODO Auto-generated method stub
 		g.setColor(Color.BLUE);
 		int taille = 40;
-		g.drawOval((int)x-width/2, (int)y-height/2, width, height);
+		g.drawRect((int)x-width/2, (int)y-height/2,width, height);
 		g.setColor(Color.RED);
 		//if ( orientation == 90)
 		int xArrivee = 0 ;
