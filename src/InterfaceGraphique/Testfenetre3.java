@@ -1,6 +1,6 @@
 package InterfaceGraphique;
 
-
+/*
 	import javax.swing.JFrame;
 	
 	
@@ -16,3 +16,5 @@ public class Testfenetre3 {
 	}
 	
 }
+
+*/
