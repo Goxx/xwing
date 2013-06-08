@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 
 import pilot.Pilot;
 import pilot.Ship;
+import pilot.ShipName;
 
 import deplacement.Mouvement;
 
@@ -60,10 +61,10 @@ import java.awt.event.MouseListener;
 			miniatureCopi.setY(250);
 			miniatureCopi.setOrientation(190);
 
-			Ship vaisseau1 = new Ship();
+			Ship vaisseau1 = new Ship(ShipName.TIE_FIGHTER);
 			Pilot pilot = new Pilot(vaisseau1);
-			Mouvement mouvement = new Mouvement("test1", 50, 90, 90);
-			Mouvement mouvement2 = new Mouvement("test2", 50, 0, 45);
+			Mouvement mouvement = new Mouvement("test1", 50, 90, 90,0);
+			Mouvement mouvement2 = new Mouvement("test2", 50, 0, 45,0);
 			
 
 			mouvement.setNewPosition(miniature2);

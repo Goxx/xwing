@@ -113,6 +113,8 @@ public class Miniature {
 		g.setColor(Color.BLUE);
 		int taille = 40;
 		g.drawRect((int)x-width/2, (int)y-height/2,width, height);
+		//g.drawImage(img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, observer)
+		
 		g.setColor(Color.RED);
 		//if ( orientation == 90)
 		int xArrivee = 0 ;

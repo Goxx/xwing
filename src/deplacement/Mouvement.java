@@ -5,16 +5,17 @@ import miniature.Miniature;
 public class Mouvement {
 
 	String type; // le nom du mouvement
-	int deplacement;// indique la distance effectuer
+	double deplacement;// indique la distance effectuer
 	int orientation;// decalage a l orientation du vaisseau a la fin (90 est un mouvement sans virage, 270 un demi tour)
 	int decalage; // represente l'orientation du déplacement effectuer ( de 0 a 360)
-	int porte; //indique si le mouvement est droit ou un arc de cercle ( 0 est un mouvement droit, positif est un mouvement trigo, negatif un mouvement horaire)
+	int portee; //indique si le mouvement est droit ou un arc de cercle ( 0 est un mouvement droit, positif est un mouvement trigo, negatif un mouvement horaire)
 	
-	public Mouvement(String type, int deplacement, int orientation,	int decalage) {
+	public Mouvement(String type, double deplacement, int orientation,	int decalage,int portee) {
 		this.type = type;
 		this.deplacement = deplacement;
 		this.orientation = orientation;
 		this.decalage = decalage;
+		this.portee = portee;
 	}
 	
 	public void setNewPosition(Miniature imageBase){
