@@ -118,7 +118,14 @@ public class SimulatorFight {
 		}
 	}
 	
-	public void useFocusAttaquant(DiceAttaque[] resultAtt,int[] indiceRelancer){
+	public void useFocusAttaquant(DiceAttaque[] resultDefAtt){
+		for(int i=0; i < resultDefAtt.length; i++){
+			if ( resultDefAtt[i] == DiceAttaque.EYE){
+				resultDefAtt[i] = DiceAttaque.SUCESS;
+			}
+		}
+	}
+	public void useTargetLockAttaquant(DiceAttaque[] resultAtt,int[] indiceRelancer){
 		for (int indice = 0; indice < indiceRelancer.length ; indice ++) {
 			int nb = indiceRelancer[indice];
 			resultAtt[nb] = getDiceAttaque();
