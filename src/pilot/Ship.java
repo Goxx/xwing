@@ -1,6 +1,7 @@
 package pilot;
 
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -18,6 +19,8 @@ public class Ship {
 	
 	public Ship(ShipName name){
 		this.name = name;
+		
+		mouvementPossible = new HashSet<Mouvement>();
 		switch ( this.name ){
 		case TIE_FIGHTER :
 			//ajouter(new Mouvement("virage1G", 1.5, 135, 112,0));

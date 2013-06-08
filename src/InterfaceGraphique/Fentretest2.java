@@ -6,6 +6,10 @@ import javax.swing.JFrame;
 import pilot.Pilot;
 import pilot.Ship;
 import pilot.ShipName;
+import simulator.DiceAttaque;
+import simulator.DiceDefense;
+import simulator.ResultFight;
+import simulator.SimulatorFight;
 
 import deplacement.Mouvement;
 
@@ -62,11 +66,12 @@ import java.awt.event.MouseListener;
 			miniatureCopi.setOrientation(190);
 
 			Ship vaisseau1 = new Ship(ShipName.TIE_FIGHTER);
-			Pilot pilot = new Pilot(vaisseau1);
+			Pilot pilot1 = new Pilot(vaisseau1,0,1,5,2,2,2,null,null);// 5 dmg
+			Pilot pilot2 = new Pilot(vaisseau1,0,1,4,4,2,2,null,null);// 3 dmg / 4 defense
 			Mouvement mouvement = new Mouvement("test1", 50, 90, 90,0);
 			Mouvement mouvement2 = new Mouvement("test2", 50, 0, 45,0);
 			
-
+			
 			mouvement.setNewPosition(miniature2);
 			
 			mouvement2.setNewPosition(miniature4);
@@ -76,6 +81,24 @@ import java.awt.event.MouseListener;
 			dessin.ajouter(miniature3);
 			dessin.ajouter(miniature4);
 			dessin.ajouter(miniatureCopi);
+			
+			miniature1.setPilot(pilot1);
+			miniature2.setPilot(pilot2);
+			SimulatorFight simul = new SimulatorFight(miniature1, miniature2);
+			
+			DiceAttaque[] resultatAttaque = simul.getResultAttaque();
+			DiceDefense[] resultatDefense = simul.getResultDefense();
+			System.out.println("Attaque");
+			for (int i = 0; i < resultatAttaque.length; i++){
+				System.out.println(resultatAttaque[i]);
+			}
+			
+			System.out.println("Defense");
+			for (int i = 0; i < resultatDefense.length; i++){
+				System.out.println(resultatDefense[i]);
+			}
+			ResultFight resultFight = simul.getResult(resultatAttaque, resultatDefense);
+			resultFight.afficher();
 			
 cadre.addMouseListener(new MouseListener() {
 				
