@@ -18,15 +18,14 @@ public class SimulatorFight {
 		
 		DiceAttaque[] resultAtt = new DiceAttaque[nbDesAttaque];
 		DiceDefense[] resultDef = new DiceDefense[nbDesDefense];
-
 		
 		for (int i = 0; i < nbDesAttaque; i++){
 			double val =Math.random();
 			if ( val <= 0.25){
 				resultAtt[i] = DiceAttaque.FAIL;
-			}else if ( val <= 0.5){
+			}else if ( val <= 0.625){
 				resultAtt[i] = DiceAttaque.EYE;
-			}else if ( val <= 0.75){
+			}else if ( val <= 0.875){
 				resultAtt[i] = DiceAttaque.SUCESS;
 			}else {
 				resultAtt[i] = DiceAttaque.CRITICAL;
@@ -34,12 +33,12 @@ public class SimulatorFight {
 		}
 		for (int i = 0; i < nbDesAttaque; i++){
 			double val =Math.random();
-			if ( val <= 0.5){
+			if ( val <= 0.325){
 				resultDef[i] = DiceDefense.FAIL;
 			}else if ( val <= 0.75){
-				resultDef[i] = DiceDefense.EYE;
-			}else {
 				resultDef[i] = DiceDefense.DODGE;
+			}else {
+				resultDef[i] = DiceDefense.EYE;
 			}
 		}
 	}
